@@ -360,6 +360,21 @@ span.comment, span.comment > *, span.string, span.string > * {
 	color: #606060;
 }
 
+[class*="span"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 20px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 940px;
+}
+.span3 {
+  width: 220px;
+}
+
 @media print {
 	#layout-menu { display: none; }
 }
