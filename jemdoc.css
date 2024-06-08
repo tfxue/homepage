@@ -421,6 +421,20 @@ img.proj_thumb {
 	padding: 1px;
 }
 
+video.proj_thumb {
+	width: 180px;
+	border: 1px solid;
+	border-color: #e0e0e0;
+	padding: 1px;
+}
+
+td.proj_interactive {
+	height: 180px;
+	width: 25%;
+	vertical-align: top;
+	padding-bottom: 10px
+}
+
 table {
     border: 2px solid black;
     border-collapse: collapse;
@@ -468,4 +482,44 @@ p.pub_link{
 	font-size: 14px	
 }
 
+/* Others */
+h2 {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
+}
 
+.papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.name {
+  padding-top: 20px;
+  margin: 0;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
