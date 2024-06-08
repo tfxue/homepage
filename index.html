@@ -175,31 +175,30 @@ Hongyu Deng (邓宏宇) <br /> Ph.D. candidate  <br />
 
 <table class="imgtable">
 
-<tr>
-<td>
-<div class="col-3 thumbnail">
-<div class="overlay-video">
-    <video width="100%" playsinline muted loop>
-	<source src="/image/2024_bilarf.mp4" type="video/mp4" />
-    </video>
-</div>
-<img width="100%" src="/image/2024_bilarf.jpg" />
-</div>	
+<tr onmouseout="bilarf_stop()" onmouseover="bilarf_start()">
+<td class="proj_interactive">
+  <div class="one">
+	<div class="two" id='bilarf_image'>
+		<video class="proj_thumb" muted autoplay loop><source src="image/2024_bilarf.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+	</div>
+	<img class="proj_thumb" src="image/2024_bilarf.jpg">
+  </div>
+  <script type="text/javascript">
+	function bilarf_start() {
+	  document.getElementById('bilarf_image').style.opacity = "1";
+	}
+
+	function bilarf_stop() {
+	  document.getElementById('bilarf_image').style.opacity = "0";
+	}
+	bilarf_stop()
+  </script>
 </td>
 <td><p class="pub_title"> Bilateral Guided Radiance Field Processing </p>
   <p class="pub_author"> Yuehao Wang, Chaoyi Wang, Bingchen Gong, <b>Tianfan Xue</b>, Chao Dong<br>
   <b>ACM SIGGRAPH</b>, 2024.
 [<a href="https://arxiv.org/abs/2406.00448.pdf">PDF</a>] [<a href="https://bilarfpro.github.io/">Webpage</a>] 
 [<a href="https://github.com/yuehaowang/bilarf/">Code</a>] [<a href="https://huggingface.co/datasets/Yuehao/bilarf_data/">Data</a>] 
-</p></td>
-</tr>
-
-<tr>
-<td><img class="proj_thumb" src="./image/depictqa.jpg" alt=""/>&nbsp;</td>
-<td><p class="pub_title"> Depicting Beyond Scores: Advancing Image Quality Assessment through Multi-modal Language Models </p>
-  <p class="pub_author"> Zhiyuan You*, Zheyuan Li*, Jinjin Gu*, Zhenfei Yin, <b>Tianfan Xue</b>, Chao Dong<br>
-  arXiv 2312.08962, 2024.
-[<a href="https://arxiv.org/abs/2312.08962.pdf">PDF</a>] [<a href="https://depictqa.github.io/">Webpage</a>]
 </p></td>
 </tr>
 
