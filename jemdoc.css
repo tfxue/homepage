@@ -429,7 +429,6 @@ video.proj_thumb {
 }
 
 td.proj_interactive {
-	height: 180px;
 	width: 25%;
 	vertical-align: top;
 	padding-bottom: 10px
@@ -505,13 +504,11 @@ h2 {
 
 .one {
   width: 160px;
-  height: 160px;
   position: relative;
 }
 
 .two {
   width: 160px;
-  height: 160px;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
