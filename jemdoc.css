@@ -372,7 +372,7 @@ span.comment, span.comment > *, span.string, span.string > * {
   width: 940px;
 }
 .span3 {
-  width: 220px;
+  width: 200px;
 }
 
 @media print {
