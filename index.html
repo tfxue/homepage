@@ -99,14 +99,82 @@ Tianfan Xue was working in Google Research from 2017 to 2022. Before that, Tianf
 <iframe width="400" height="226" src="https://www.youtube.com/embed/zidaYS85mCY" frameborder="0" allowfullscreen></iframe>
 <iframe width="250" height="141" src="https://www.youtube.com/embed/VEwYrSPFatg" frameborder="0" allowfullscreen></iframe>
 -->
-<iframe width="440" height="248" src="https://www.youtube.com/embed/yKmkXJSlAl8" frameborder="0" allowfullscreen></iframe>
-<iframe width="440" height="248" src="https://www.youtube.com/embed/WmI7bv9nqjI" frameborder="0" allowfullscreen></iframe>
-<iframe width="440" height="248" src="https://www.youtube.com/embed/3AHDbJlGKwY" frameborder="0" allowfullscreen></iframe>
-<iframe width="440" height="248" src="https://www.youtube.com/embed/GP0PdaXs93E" frameborder="0" allowfullscreen></iframe>
-<iframe width="440" height="248" src="https://www.youtube.com/embed/ZYSOonigv3s" frameborder="0" allowfullscreen></iframe>
-<iframe width="440" height="248" src="https://www.youtube.com/embed/xoyNiatRIh4" frameborder="0" allowfullscreen></iframe>
+<table class="imgtable"><tbody>
+<tr>
+<td><iframe id="videoyt1" width="440" height="248" src="https://www.youtube.com/embed/yKmkXJSlAl8" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt2" width="440" height="248" src="https://www.youtube.com/embed/WmI7bv9nqjI" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+<tr>
+<td><iframe id="videoyt3" width="440" height="248" src="https://www.youtube.com/embed/3AHDbJlGKwY" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt4" width="440" height="248" src="https://www.youtube.com/embed/GP0PdaXs93E" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+<tr>
+<td><iframe id="videoyt5" width="440" height="248" src="https://www.youtube.com/embed/ZYSOonigv3s" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt6" width="440" height="248" src="https://www.youtube.com/embed/xoyNiatRIh4" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+</table>
 <!-- <video width="480" height="260" controls><source src="http://visualdynamics.csail.mit.edu/visualDynamics.mov" type="video/mp4">Your browser does not support the video tag. Please download it from <a href="http://visualdynamics.csail.mit.edu/visualDynamics.mov">this</a>.</video> -->
 </p>
+
+<script>
+function replaceVideoWithImage(videoId, imageUrl) {
+  // Get the video element
+  const videoElement = document.getElementById(videoId);
+
+  if (videoElement) {
+	// Create a new image element
+	const imgElement = document.createElement('img');
+	imgElement.src = imageUrl; // Set the image source
+	imgElement.width = 400; // Match the iframe width
+	imgElement.height = 228; // Match the iframe height
+	imgElement.alt = 'Replacement Image'; // Add alt text for accessibility
+	imgElement.style.display = 'block'; // Ensure the image is visible
+	imgElement.style.borderWidth = '5px';
+	imgElement.style.borderStyle = 'solid';
+	imgElement.style.borderColor = 'white';
+
+	// Replace the iframe with the image
+	videoElement.parentNode.replaceChild(imgElement, videoElement);
+  } else {
+	console.error('Video element not found');
+  }
+}
+
+async function isWebsiteReachable(url) {
+  try {
+    // Send a request to the URL
+	console.log('Waiting ...')
+    const response = await fetch(url, {
+      method: 'HEAD', // Use HEAD to minimize data transfer (only headers are retrieved)
+      mode: 'no-cors', // Avoid CORS issues with third-party websites (may still block for some URLs)
+	  signal: AbortSignal.timeout(3000)
+    });
+
+    // Check if the response status is in the success range
+    if (response.ok || response.status === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    return false;
+  }
+}
+
+isWebsiteReachable('https://www.youtube.com').then((reachable) => {
+  if (!reachable) {
+	console.log('Repalce')
+    replaceVideoWithImage('videoyt1', './image/yt_yKmkXJSlAl8_poster.jpg')
+	replaceVideoWithImage('videoyt2', './image/yt_WmI7bv9nqjI_poster.jpg')
+	replaceVideoWithImage('videoyt3', './image/yt_3AHDbJlGKwY_poster.jpg')
+	replaceVideoWithImage('videoyt4', './image/yt_GP0PdaXs93E_poster.jpg')
+	replaceVideoWithImage('videoyt5', './image/yt_ZYSOonigv3s_poster.jpg')
+	replaceVideoWithImage('videoyt6', './image/yt_xoyNiatRIh4_poster.jpg')
+  } else {
+  }
+});
+
+</script>
 
 <h2>Lab members</h2>
 
@@ -232,54 +300,55 @@ Ph.D. candidate <br />
 <a id="publications" class="anchor"></a>
 <h2>Selected Publications</h2>
 
+<script>
+function addImageSwitcher(projName) {
+  const trEle = document.getElementById(projName + '_tr');
+  const imgEle = document.getElementById(projName + '_image')
+  trEle.onmouseout = function () {
+    imgEle.style.opacity = '0';
+  };
+  trEle.onmouseover = function () {
+    imgEle.style.opacity = '1';
+  };
+  imgEle.style.opacity = '0';
+  console.log(projName + '_image')
+  console.log(trEle)
+  console.log(imgEle)
+}
+</script>
+
 <table class="imgtable">
 
 <tbody>
 
-<tr onmouseout="phocolens_stop()" onmouseover="phocolens_start()">
+<tr id='phocolens_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-	<div class="two" id='phocolens_image' style="height=160px"><img class="proj_thumb" src="image/2024_phocolen_ours.png"></div>
-	<img class="proj_thumb" src="image/2024_phocolen_base.png">
+    <div class="two" id='phocolens_image' style='height=160px'><img class='proj_thumb' src='image/2024_phocolen_ours.png'></div>
+    <img class="proj_thumb" src="image/2024_phocolen_base.png">
   </div>
-  <script type="text/javascript">
-	function phocolens_start() {
-	  document.getElementById('phocolens_image').style.opacity = "1";
-	}
-	function phocolens_stop() {
-	  document.getElementById('phocolens_image').style.opacity = "0";
-	}
-	bilarf_stop()
-  </script>
+  <script type="text/javascript">addImageSwitcher('phocolens') </script>
 </td>
 <td><p class="pub_title"> PhoCoLens: Photorealistic and Consistent Reconstruction in Lensless Imaging </p>
   <p class="pub_author">Xin Cai, Zhiyuan You, Hailong Zhang, Wentao Liu, Jinwei Gu, <b>Tianfan Xue</b><br>
   Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2024. <br> 
-  <b>Spotlight</b>, 
+  <b>Spotlight</b> 
 [<a href="https://arxiv.org/pdf/2409.17996">PDF</a>] [<a href="https://phocolens.github.io/">Webpage</a>]
 </p>
 </td>
 </tr>
 
-<tr onmouseout="rltuning_stop()" onmouseover="rltuning_start()">
+<tr id='rltuning_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
 	<div class="two" id='rltuning_image' style="height=160px"><img class="proj_thumb" src="image/2024-rl-tuning-ours.jpg"></div>
 	<img class="proj_thumb" src="image/2024-rl-tuning-input.jpg">
   </div>
-  <script type="text/javascript">
-	function rltuning_start() {
-	  document.getElementById('rltuning_image').style.opacity = "1";
-	}
-	function rltuning_stop() {
-	  document.getElementById('rltuning_image').style.opacity = "0";
-	}
-	bilarf_stop()
-  </script>
+  <script type="text/javascript">addImageSwitcher('rltuning') </script>
 </td>
 <td><p class="pub_title"> Goal Conditioned Reinforcement Learning for Photo Finishing Tuning </p>
   <p class="pub_author"> Jiarui Wu, Yujin Wang, Lingen Li, Zhang Fan, <b>Tianfan Xue</b><br>
-  Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2024.
+  Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2024. [<a href="https://openreview.net/pdf/3f8d40c2dcf5fa09bbe755497ee149774572ee7d.pdf">PDF</a>]
 </p></td>
 </tr>
 
@@ -287,7 +356,7 @@ Ph.D. candidate <br />
 <td><img class="proj_thumb" src="./image/2024_adaptiveisp.jpg" alt=""/>&nbsp;</td>
 <td><p class="pub_title"> AdaptiveISP: Learning an Adaptive Image Signal Processor for Object Detection </p>
   <p class="pub_author"> Yujin Wang, Xu Tian yi, Zhang Fan, <b>Tianfan Xue</b>, Jinwei Gu<br>
-  Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2024.
+  Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2024. [<a href="https://arxiv.org/pdf/2410.22939">PDF</a>]
 </p></td>
 </tr>
 
@@ -296,29 +365,22 @@ Ph.D. candidate <br />
 <td><p class="pub_title"> HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation </p>
   <p class="pub_author"> Zhenzhi Wang, Yixuan Li, Yanhong Zeng, Youqing Fang, Yuwei Guo, Wenran Liu, Jing Tan, Kai Chen, Bo Dai, <b>Tianfan Xue</b>, Dahua Lin<br>
   Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2024.
+  [<a href="https://arxiv.org/pdf/2407.17438">PDF</a>] [<a href="https://humanvid.github.io/">Webpage</a>] [<a href="https://github.com/zhenzhiwang/HumanVid">Code</a>] [<a href="https://github.com/zhenzhiwang/HumanVid?tab=readme-ov-file#news">Data</a>]
 </p></td>
 </tr>
 
-<tr onmouseout="dualdn_stop()" onmouseover="dualdn_start()">
+<tr id='dualdn_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
 	<div class="two" id='dualdn_image' style="height=160px"><img class="proj_thumb" src="image/2024_dualdn_ours.jpg"></div>
 	<img class="proj_thumb" src="image/2024_dualdn_raw_denoise.jpg">
   </div>
-  <script type="text/javascript">
-	function dualdn_start() {
-	  document.getElementById('dualdn_image').style.opacity = "1";
-	}
-	function dualdn_stop() {
-	  document.getElementById('dualdn_image').style.opacity = "0";
-	}
-	bilarf_stop()
-  </script>
+  <script type="text/javascript">addImageSwitcher('dualdn') </script>
 </td>
 <td><p class="pub_title"> DualDn: Dual-domain Denoising via Differentiable ISP </p>
   <p class="pub_author"> Ruikang Li, Yujin Wang, Shiqi Chen, Fan Zhang, Jinwei Gu, <b>Tianfan Xue</b><br>
   European Conference on Computer Vision (<b>ECCV</b>), 2024.
-[<a href="https://openimaginglab.github.io/DualDn/">Webpage</a>]
+  [<a href="https://arxiv.org/pdf/2409.18783">PDF</a>] [<a href="https://openimaginglab.github.io/DualDn/">Webpage</a>] [<a href="https://github.com/OpenImagingLab/DualDn">Code</a>]
 </p>
 </td>
 </tr>
@@ -334,35 +396,27 @@ Ph.D. candidate <br />
 </p></td>
 </tr>
 
-<tr onmouseout="depictqa_stop()" onmouseover="depictqa_start()">
+<tr id='depictqa_tr'>
 <td class="proj_interactive" style="height=120px">
   <div class="one" style="height=160px">
 	<div class="two" id='depictqa_image' style="height=160px"><img class="proj_thumb" src="image/2024_depictqa.jpg"></div>
 	<img class="proj_thumb" src="image/2024_depictqa_logo.jpg">
   </div>
-  <script type="text/javascript">
-	function depictqa_start() {
-	  document.getElementById('depictqa_image').style.opacity = "1";
-	}
-	function depictqa_stop() {
-	  document.getElementById('depictqa_image').style.opacity = "0";
-	}
-	bilarf_stop()
-  </script>
+  <script type="text/javascript">addImageSwitcher('depictqa') </script>
 </td>
 <td>
 <p class="pub_title"> Descriptive Image Quality Assessment in the Wild </p>
 <p class="pub_author"> Zhiyuan You, Jinjin Gu, Zheyuan Li, Xin Cai, Kaiwen Zhu, Chao Dong, <b>Tianfan Xue</b><br>
 arXiv 2405.18842, 2024.
 [<a href="https://depictqa.github.io/">Project</a>]
-[<a href="https://depictqa.github.io/depictqa-wild/">Webpage</a>] [<a href="https://arxiv.org/pdf/2405.18842.pdf">PDF</a>]
+[<a href="https://depictqa.github.io/depictqa-wild/">Webpage</a>] [<a href="https://arxiv.org/pdf/2405.18842.pdf">PDF</a>] [<a href="https://github.com/XPixelGroup/DepictQA">Code</a>]
 </p>
 <p class="pub_title"> Depicting Beyond Scores:
 Advancing Image Quality Assessment through Multi-modal Language Models
 </p>
   <p class="pub_author"> Zhiyuan You*, Zheyuan Li*, Jinjin Gu*, Zhenfei Yin, <b>Tianfan Xue</b>, Chao Dong<br>
   European Conference on Computer Vision (<b>ECCV</b>), 2024.
-[<a href="https://depictqa.github.io/depictqa-v1/">Webpage</a>] [<a href="https://arxiv.org/pdf/2312.08962.pdf">PDF</a>]
+[<a href="https://depictqa.github.io/depictqa-v1/">Webpage</a>] [<a href="https://arxiv.org/pdf/2312.08962.pdf">PDF</a>] [<a href="https://github.com/XPixelGroup/DepictQA">Code</a>]
 </p>
 </td>
 </tr>
@@ -372,7 +426,7 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 <td><p class="pub_title"> TimeLens-XL: Real-time Event-based Video Frame Interpolation with Large Motion </p>
   <p class="pub_author"> Yongrui Ma, Shi Guo, Yutian Chen, <b>Tianfan Xue</b>, Jinwei Gu<br>
   European Conference on Computer Vision (<b>ECCV</b>), 2024.
-[<a href="https://mayongrui.github.io/TimeLens-XL/">Webpage</a>]
+[<a href="https://openimaginglab.github.io/TimeLens-XL/">PDF</a>] [<a href="https://openimaginglab.github.io/TimeLens-XL/">Webpage</a>] [<a href="https://github.com/OpenImagingLab/TimeLens-XL">Code</a>]
 </p></td>
 </tr>
 
@@ -385,23 +439,13 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 </p></td>
 </tr>
 
-<tr onmouseout="bilarf_stop()" onmouseover="bilarf_start()">
+<tr id='bilarf_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-	<div class="two" id='bilarf_image' style="height=160px">
-		<video class="proj_thumb" muted autoplay loop><source src="image/2024_bilarf.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-	</div>
+	<div class="two" id='bilarf_image' style="height=160px"><video class="proj_thumb" muted autoplay loop><source src="image/2024_bilarf.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
 	<img class="proj_thumb" src="image/2024_bilarf.jpg">
   </div>
-  <script type="text/javascript">
-	function bilarf_start() {
-	  document.getElementById('bilarf_image').style.opacity = "1";
-	}
-	function bilarf_stop() {
-	  document.getElementById('bilarf_image').style.opacity = "0";
-	}
-	bilarf_stop()
-  </script>
+  <script type="text/javascript">addImageSwitcher('bilarf') </script>
 </td>
 <td><p class="pub_title"> Bilateral Guided Radiance Field Processing </p>
   <p class="pub_author"> Yuehao Wang, Chaoyi Wang, Bingchen Gong, <b>Tianfan Xue</b><br>
@@ -413,7 +457,7 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 </td>
 </tr>
 
-<tr onmouseout="lensless_face_stop()" onmouseover="lensless_face_start()">
+<tr id='lensless_face_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=80px">
 	<div class="two" id='lensless_face_image' style="height=80px">
@@ -421,15 +465,7 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 	</div>
 	<img class="proj_thumb" src="image/2024_lensless_face.jpg">
   </div>
-  <script type="text/javascript">
-	function lensless_face_start() {
-	  document.getElementById('lensless_face_image').style.opacity = "1";
-	}
-	function lensless_face_stop() {
-	  document.getElementById('lensless_face_image').style.opacity = "0";
-	}
-	bilarf_stop()
-  </script>
+  <script type="text/javascript">addImageSwitcher('lensless_face') </script>
 </td>
 <td><p class="pub_title"> LenslessFace : An End-to-End Optimized Lensless System for Privacy-Preserving Face Verification </p>
   <p class="pub_author"> Xin Cai, Hailong Zhang, Chenchen Wang, Wentao Liu, Jinwei Gu, <b>Tianfan Xue</b><br>
