@@ -101,12 +101,12 @@ Tianfan Xue was working in Google Research from 2017 to 2022. Before that, Tianf
 -->
 <table class="imgtable"><tbody>
 <tr>
-<td><iframe id="videoyt1" width="440" height="248" src="https://www.youtube.com/embed/yKmkXJSlAl8" frameborder="0" allowfullscreen></iframe></td>
-<td><iframe id="videoyt2" width="440" height="248" src="https://www.youtube.com/embed/WmI7bv9nqjI" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt1" width="440" height="248" src="https://www.youtube.com/embed/-VMV3MD1GIE" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt2" width="440" height="248" src="https://www.youtube.com/embed/yKmkXJSlAl8" frameborder="0" allowfullscreen></iframe></td>
 </tr>
 <tr>
-<td><iframe id="videoyt3" width="440" height="248" src="https://www.youtube.com/embed/3AHDbJlGKwY" frameborder="0" allowfullscreen></iframe></td>
-<td><iframe id="videoyt4" width="440" height="248" src="https://www.youtube.com/embed/GP0PdaXs93E" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt3" width="440" height="248" src="https://www.youtube.com/embed/WmI7bv9nqjI" frameborder="0" allowfullscreen></iframe></td>
+<td><iframe id="videoyt4" width="440" height="248" src="https://www.youtube.com/embed/3AHDbJlGKwY" frameborder="0" allowfullscreen></iframe></td>
 </tr>
 <tr>
 <td><iframe id="videoyt5" width="440" height="248" src="https://www.youtube.com/embed/ZYSOonigv3s" frameborder="0" allowfullscreen></iframe></td>
@@ -164,10 +164,10 @@ async function isWebsiteReachable(url) {
 isWebsiteReachable('https://www.youtube.com').then((reachable) => {
   if (!reachable) {
 	console.log('Repalce')
-    replaceVideoWithImage('videoyt1', './image/yt_yKmkXJSlAl8_poster.jpg')
-	replaceVideoWithImage('videoyt2', './image/yt_WmI7bv9nqjI_poster.jpg')
-	replaceVideoWithImage('videoyt3', './image/yt_3AHDbJlGKwY_poster.jpg')
-	replaceVideoWithImage('videoyt4', './image/yt_GP0PdaXs93E_poster.jpg')
+	replaceVideoWithImage('videoyt1', './image/yt_VMV3MD1GIE_poster.jpg')
+    replaceVideoWithImage('videoyt2', './image/yt_yKmkXJSlAl8_poster.jpg')
+	replaceVideoWithImage('videoyt3', './image/yt_WmI7bv9nqjI_poster.jpg')
+	replaceVideoWithImage('videoyt4', './image/yt_3AHDbJlGKwY_poster.jpg')
 	replaceVideoWithImage('videoyt5', './image/yt_ZYSOonigv3s_poster.jpg')
 	replaceVideoWithImage('videoyt6', './image/yt_xoyNiatRIh4_poster.jpg')
   } else {
@@ -320,6 +320,33 @@ function addImageSwitcher(projName) {
 <table class="imgtable">
 
 <tbody>
+
+<tr id='ultrafusion_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='ultrafusion_image' style='height=160px'><img class='proj_thumb' src='image/2024-ultrafusion-result.jpg'></div>
+    <img class="proj_thumb" src="image/2024-ultrafusion-input.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('ultrafusion') </script>
+</td>
+<td><p class="pub_title"> UltraFusion: Ultra High Dynamic Imaging using Exposure Fusion </p>
+  <p class="pub_author">Zixuan Chen*, Yujin Wang*, Xin Cai, Zhiyuan You, Zheming Lu, Fan Zhang, Shi Guo, <b>Tianfan Xue</b><br>
+  arXiv 2501.11515, 2025. <br> 
+  <b>Try online demo</b> at: <a href="https://huggingface.co/spaces/iimmortall/UltraFusion">Huggingface</a> or <a href="https://openxlab.org.cn/apps/detail/OpenImagingLab/UltraFusion">Xlab</a></br>
+[<a href="https://arxiv.org/pdf/2501.11515">PDF</a>] [<a href="https://openimaginglab.github.io/UltraFusion/">Github</a>] [<a href="https://ultrafusion.intern-ai.org.cn/home">Website</a>]
+</p>
+</td>
+</tr>
+
+<tr id='evshdr_tr'>
+<td><img class="proj_thumb" src="./image/2024-evshdr.jpg" alt=""/>&nbsp;</td>
+<td><p class="pub_title"> Event-assisted 12-stop HDR Imaging of Dynamic Scene </p>
+  <p class="pub_author">Shi Guo, Zixuan Chen, Ziran Zhang, Yutian Chen, Gangwei Xu, <b>Tianfan Xue</b><br>
+  arXiv 2412.14705, 2024. <br> 
+[<a href="https://arxiv.org/pdf/2412.14705">PDF</a>] [<a href="https://openimaginglab.github.io/Event-Assisted-12stops-HDR/">Website</a>]
+</p>
+</td>
+</tr>
 
 <tr id='phocolens_tr'>
 <td class="proj_interactive">
