@@ -346,14 +346,17 @@ co. w. Qi Dou & Jinwei Gu <br />
 <script>
 function addImageSwitcher(projName) {
   const trEle = document.getElementById(projName + '_tr');
-  const imgEle = document.getElementById(projName + '_image')
+  const twoEle = document.getElementById(projName + '_two')
+  const oneEle = document.getElementById(projName + '_one')
   trEle.onmouseout = function () {
-    imgEle.style.opacity = '0';
+    twoEle.style.opacity = '0';
+    oneEle.style.opacity = '1';
   };
   trEle.onmouseover = function () {
-    imgEle.style.opacity = '1';
+    twoEle.style.opacity = '1';
+    oneEle.style.opacity = '0';
   };
-  imgEle.style.opacity = '0';
+  oneEle.style.opacity = '0';
   console.log(projName + '_image')
   console.log(trEle)
   console.log(imgEle)
@@ -370,13 +373,132 @@ function addImageSwitcher(projName) {
 </td>
 </tr>
 
+<tr id='flashvsr_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='flashvsr_two' style='height=160px'>
+	  <video width=125% muted autoplay loop><source class='proj_thumb' src='image/2025_flashvsr.mp4' type='video/mp4' ></video>
+	  </div>
+    <img class="proj_thumb" id='flashvsr_one' src="image/2025_flashvsr.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('flashvsr') </script>
+</td>
+<td><p class="pub_title"> FlashVSR: Towards Real-Time Diffusion-Based Streaming Video Super-Resolution </p>
+  <p class="pub_author"> Junhao Zhuang, Shi Guo, Xin Cai, Xiaohui Li, Yihao Liu, Chun Yuan, <b>Tianfan Xue</b>&#8224<br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br>
+[<a href="https://arxiv.org/pdf/2510.12747">PDF</a>] [<a href="https://zhuang2002.github.io/FlashVSR/">Website</a>] [<a href="https://huggingface.co/JunhaoZhuang/FlashVSR">Code</a>]
+</p>
+</td>
+</tr>
+
+<tr id='davae_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='davae_two' style="height=160px"><img class='proj_thumb' src='image/2026-davae-plot.jpg'></div>
+    <img class="proj_thumb" id='davae_one' src="image/2026-davae-input.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('davae') </script>
+</td>
+<td><p class="pub_title"> DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment </p>
+  <p class="pub_author">Xin Cai, Zhiyuan You, Zhoutong Zhang, <b>Tianfan Xue</b><br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026. <br> 
+[<a href="https://caixin98.github.io/papers/davae/paper.pdf">PDF</a>]
+</p>
+</td>
+</tr>
+
+<tr id='dynamictree_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='dynamictree_two' style='height=160px'>
+	  <video width=100% muted autoplay loop><source class='proj_thumb' src='image/2026-dynamictree.mp4' type='video/mp4' ></video>
+	</div>
+    <img class="proj_thumb" id="dynamictree_one" src="image/2026-dynamictree.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('dynamictree') </script>
+</td>
+<td><p class="pub_title"> DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum </p>
+  <p class="pub_author">Yaokun Li, Lihe Ding, Xiao Chen, Guang Tan, <b>Tianfan Xue</b><br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br> 
+[<a href="https://lg-li.github.io/project/cubecomposer/">Website</a>] [<a href="https://lg-li.github.io/pub-videos/CubeComposer/li2026cubecomposer-video.mp4">Video</a>]
+</p>
+</td>
+</tr>
+
+<tr>
+<td><img class="proj_thumb" src="./image/2026-instantretouch.jpg" alt=""/>&nbsp;</td>
+<td><p class="pub_title"> InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space </p>
+<p class="pub_author"> Jiarui Wu, Yujin Wang, Ruikang Li, Fan Zhang, Mingde Yao, <b>Tianfan Xue</b> <br>
+Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br>
+[<a href="https://gnwekge78707.github.io/papers/DistilledBilateral___CVPR_2026__arxiv_.pdf">PDF</a>]</p></td>
+</tr>
+
+<tr id='cubecomposer_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='cubecomposer_two' style='height=160px'>
+	<video width=115% muted autoplay loop><source class='proj_thumb' src='image/2026-cubecomposer-video.mp4' type='video/mp4' ></video>
+	</div>
+    <img class="proj_thumb" id="cubecomposer_one" src="image/2026-cubecomposer.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('cubecomposer') </script>
+</td>
+<td><p class="pub_title"> CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video </p>
+  <p class="pub_author">Lingen Li, Guangzhi Wang, Xiaoyu Li, Zhaoyang Zhang, Qi Dou, Jinwei Gu, <b>Tianfan Xue</b>, Ying Shan<br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br> 
+[<a href="https://lg-li.github.io/project/cubecomposer/">Website</a>] [<a href="https://lg-li.github.io/pub-videos/CubeComposer/li2026cubecomposer-video.mp4">Video</a>]
+</p>
+</td>
+</tr>
+
+<tr id='arvfi_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='arvfi_two' style="height=160px"><img class='proj_thumb' src='image/2026-arvfi-net.jpg'></div>
+    <img class="proj_thumb" id='arvfi_one' src="image/2026-arvfi.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('arvfi') </script>
+</td>
+<td><p class="pub_title"> Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation </p>
+  <p class="pub_author">Yongrui Ma, Shijie Zhao, Mingde Yao, Junlin Li, Li zhang, Xiaohong Liu, Qi Dou, Jinwei Gu, <b>Tianfan Xue</b><br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br> 
+</p>
+</td>
+</tr>
+
+
+<tr id='photoframer_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='photoframer_two' style='height=160px'><img class='proj_thumb' src='image/2026_photoframer_output.jpg'></div>
+    <img class="proj_thumb" id='photoframer_one' src="image/2026_photoframer_input.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('photoframer') </script>
+</td>
+<td><p class="pub_title"> PhotoFramer: Multi-modal Image Composition Instruction </p>
+  <p class="pub_author">Zhiyuan You, Ke Wang, He Zhang, Xin Cai, Jinjin Gu, <b>Tianfan Xue</b>, Chao Dong, Zhoutong Zhang<br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026. <br> 
+[<a href="https://arxiv.org/abs/2512.00993">PDF</a>] [<a href="https://zhiyuanyou.github.io/photoframer/">Website</a>]
+</p>
+</td>
+</tr>
+
+	
+<tr>
+  <td><img class="proj_thumb" src="./image/2026_cgspn.jpg" alt=""/>&nbsp;</td>
+  <td><p class="pub_title"> Scaling Parallel Sequence Models to Vision Foundation Models </p>
+  <p class="pub_author"> Jiarui Wu, Yujin Wang, Ruikang Li, Fan Zhang, Mingde Yao, <b>Tianfan Xue</b> <br>
+  Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 </p>
+  </td>
+</tr>
+
 <tr id='fullpart_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='fullpart_image' style='height=160px'>
+    <div class="two" id='fullpart_two' style='height=160px'>
 	<video width=115% muted autoplay loop><source class='proj_thumb' src='image/2026-fullpart.mp4' type='video/mp4' ></video>
 	</div>
-    <img class="proj_thumb" src="image/2026-fullpart.jpg">
+    <img class="proj_thumb" id="fullpart_one" src="image/2026-fullpart.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('fullpart') </script>
 </td>
@@ -391,10 +513,10 @@ function addImageSwitcher(projName) {
 <tr id='s2rhdr_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='s2rhdr_image' style='height=160px'>
-	<img class="proj_thumb" src="image/2026-s2r-hdr.gif">
+    <div class="two" id='s2rhdr_two' style='height=160px'>
+	  <img class="proj_thumb" src="image/2026-s2r-hdr.gif">
 	</div>
-    <img class="proj_thumb" src="image/2026-s2r-hdr.jpg">
+    <img class="proj_thumb" id="s2rhdr_one" src="image/2026-s2r-hdr.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('s2rhdr') </script>
 </td>
@@ -409,10 +531,10 @@ function addImageSwitcher(projName) {
 <tr id='loraedit_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='loraedit_image' style='height=160px'>
+    <div class="two" id='loraedit_two' style='height=160px'>
 	<video width=115% muted autoplay loop><source class='proj_thumb' src='image/2026-loraedit.mp4' type='video/mp4' ></video>
 	</div>
-    <img class="proj_thumb" src="image/2026-loraedit.jpg">
+    <img class="proj_thumb" id="loraedit_one" src="image/2026-loraedit.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('loraedit') </script>
 </td>
@@ -447,8 +569,8 @@ function addImageSwitcher(projName) {
 <tr id='tooncomposer_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='tooncomposer_image' style='height=160px'><img class='proj_thumb' src='image/2025-tooncomposer.gif'></div>
-    <img class="proj_thumb" src="image/2025-tooncomposer.jpg">
+    <div class="two" id='tooncomposer_two' style='height=160px'><img class='proj_thumb' src='image/2025-tooncomposer.gif'></div>
+    <img class="proj_thumb" id='tooncomposer_one' src="image/2025-tooncomposer.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('tooncomposer') </script>
 </td>
@@ -466,31 +588,13 @@ function addImageSwitcher(projName) {
 </td>
 </tr>
 
-<tr id='flashvsr_tr'>
-<td class="proj_interactive">
-  <div class="one" style="height=160px">
-    <div class="two" id='flashvsr_image' style='height=160px'>
-	<video width=125% muted autoplay loop><source class='proj_thumb' src='image/2025_flashvsr.mp4' type='video/mp4' ></video>
-	</div>
-    <img class="proj_thumb" src="image/2025_flashvsr.jpg">
-  </div>
-  <script type="text/javascript">addImageSwitcher('flashvsr') </script>
-</td>
-<td><p class="pub_title"> FlashVSR: Towards Real-Time Diffusion-Based Streaming Video Super-Resolution </p>
-  <p class="pub_author"> Junhao Zhuang, Shi Guo, Xin Cai, Xiaohui Li, Yihao Liu, Chun Yuan, <b>Tianfan Xue</b>&#8224<br>
-  arXiv 2510.12747, 2025 <br>
-[<a href="https://arxiv.org/pdf/2510.12747">PDF</a>] [<a href="https://zhuang2002.github.io/FlashVSR/">Website</a>] [<a href="https://huggingface.co/JunhaoZhuang/FlashVSR">Code</a>]
-</p>
-</td>
-</tr>
-
 <tr id='camclonemaster_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='camclonemaster_image' style='height=160px'>
+    <div class="two" id='camclonemaster_two' style='height=160px'>
 	<video width=115% muted autoplay loop><source class='proj_thumb' src='image/2025_camclonemaster.mp4' type='video/mp4' ></video>
 	</div>
-    <img class="proj_thumb" src="image/2025_camclonemaster.jpg">
+    <img class="proj_thumb" id="camclonemaster_one" src="image/2025_camclonemaster.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('camclonemaster') </script>
 </td>
@@ -505,10 +609,10 @@ function addImageSwitcher(projName) {
 <tr id='4dslomo_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='4dslomo_image' style='height=160px'>
+    <div class="two" id='4dslomo_two' style='height=160px'>
 	<video width=112% muted autoplay loop><source class='proj_thumb' src='image/2025-4DSloMo.mp4' type='video/mp4' ></video>
 	</div>
-    <img class="proj_thumb" src="image/2025-4DSloMo.jpg">
+    <img class="proj_thumb" id="4dslomo_one" src="image/2025-4DSloMo.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('4dslomo') </script>
 </td>
@@ -523,8 +627,8 @@ function addImageSwitcher(projName) {
 <tr id='copart_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='copart_image' style='height=160px'><img class='proj_thumb' src='image/2025-copart.gif'></div>
-    <img class="proj_thumb" src="image/2025-copart.jpg">
+    <div class="two" id='copart_two' style='height=160px'><img class='proj_thumb' src='image/2025-copart.gif'></div>
+    <img class="proj_thumb" id='copart_one' src="image/2025-copart.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('copart') </script>
 </td>
@@ -539,8 +643,8 @@ function addImageSwitcher(projName) {
 <tr id='wrist_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='wrist_image' style='height=160px'><img class='proj_thumb' src='image/2025-wrist-output.gif'></div>
-    <img class="proj_thumb" src="image/2025-bracelet-input.jpg">
+    <div class="two" id='wrist_two' style='height=160px'><img class='proj_thumb' src='image/2025-wrist-output.gif'></div>
+    <img class="proj_thumb" id='wrist_one' src="image/2025-bracelet-input.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('wrist') </script>
 </td>
@@ -555,8 +659,8 @@ function addImageSwitcher(projName) {
 <tr id='gleam_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='gleam_image' style='height=160px'><img class='proj_thumb' src='image/2025-gleam.gif'></div>
-    <img class="proj_thumb" src="image/2025-gleam.jpg">
+    <div class="two" id='gleam_two' style='height=160px'><img class='proj_thumb' src='image/2025-gleam.gif'></div>
+    <img class="proj_thumb" id='gleam_one' src="image/2025-gleam.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('gleam') </script>
 </td>
@@ -609,8 +713,8 @@ function addImageSwitcher(projName) {
 <tr id='ultrafusion_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='ultrafusion_image' style='height=160px'><img class='proj_thumb' src='image/2024-ultrafusion-result.jpg'></div>
-    <img class="proj_thumb" src="image/2024-ultrafusion-input.jpg">
+    <div class="two" id='ultrafusion_two' style='height=160px'><img class='proj_thumb' src='image/2024-ultrafusion-result.jpg'></div>
+    <img class="proj_thumb" id='ultrafusion_one' src="image/2024-ultrafusion-input.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('ultrafusion') </script>
 </td>
@@ -637,8 +741,8 @@ function addImageSwitcher(projName) {
 <tr id='nvcomposer_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='nvcomposer_image' style='height=160px'><img class='proj_thumb' src='image/2025-nvcomposer.gif'></div>
-    <img class="proj_thumb" src="image/2025-nvcomposer.jpg">
+    <div class="two" id='nvcomposer_two' style='height=160px'><img class='proj_thumb' src='image/2025-nvcomposer.gif'></div>
+    <img class="proj_thumb" id='nvcomposer_one' src="image/2025-nvcomposer.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('nvcomposer') </script>
 </td>
@@ -674,8 +778,8 @@ function addImageSwitcher(projName) {
 <tr id='cinemaster_tr'>
 <td class="proj_cinemaster">
   <div class="one" style="height=160px">
-    <div class="two" id='cinemaster_image' style='height=160px'><img class='proj_thumb' src='image/2025-cinemaster.gif'></div>
-    <img class="proj_thumb" src="image/2025-cinemaster.jpg">
+    <div class="two" id='cinemaster_two' style='height=160px'><img class='proj_thumb' rc='image/2025-cinemaster.gif'></div>
+    <img class="proj_thumb" id='cinemaster_one' ssrc="image/2025-cinemaster.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('cinemaster') </script>
 </td>
@@ -716,8 +820,8 @@ function addImageSwitcher(projName) {
 <tr id='phocolens_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-    <div class="two" id='phocolens_image' style='height=160px'><img class='proj_thumb' src='image/2024_phocolen_ours.png'></div>
-    <img class="proj_thumb" src="image/2024_phocolen_base.png">
+    <div class="two" id='phocolens_two' style='height=160px'><img class='proj_thumb' src='image/2024_phocolen_ours.png'></div>
+    <img class="proj_thumb" id='phocolens_one'  src="image/2024_phocolen_base.png">
   </div>
   <script type="text/javascript">addImageSwitcher('phocolens') </script>
 </td>
@@ -733,8 +837,8 @@ function addImageSwitcher(projName) {
 <tr id='rltuning_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-	<div class="two" id='rltuning_image' style="height=160px"><img class="proj_thumb" src="image/2024-rl-tuning-ours.jpg"></div>
-	<img class="proj_thumb" src="image/2024-rl-tuning-input.jpg">
+	<div class="two" id='rltuning_two' style="height=160px"><img class="proj_thumb" src="image/2024-rl-tuning-ours.jpg"></div>
+	<img class="proj_thumb" id="rltuning_one" src="image/2024-rl-tuning-input.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('rltuning') </script>
 </td>
@@ -766,8 +870,8 @@ function addImageSwitcher(projName) {
 <tr id='dualdn_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-	<div class="two" id='dualdn_image' style="height=160px"><img class="proj_thumb" src="image/2024_dualdn_ours.jpg"></div>
-	<img class="proj_thumb" src="image/2024_dualdn_raw_denoise.jpg">
+	<div class="two" id='dualdn_two' style="height=160px"><img class="proj_thumb" src="image/2024_dualdn_ours.jpg"></div>
+	<img class="proj_thumb" id="dualdn_one" src="image/2024_dualdn_raw_denoise.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('dualdn') </script>
 </td>
@@ -793,8 +897,8 @@ function addImageSwitcher(projName) {
 <tr id='depictqa_tr'>
 <td class="proj_interactive" style="height=120px">
   <div class="one" style="height=160px">
-	<div class="two" id='depictqa_image' style="height=160px"><img class="proj_thumb" src="image/2024_depictqa.jpg"></div>
-	<img class="proj_thumb" src="image/2024_depictqa_logo.jpg">
+	<div class="two" id='depictqa_two' style="height=160px"><img class="proj_thumb" src="image/2024_depictqa.jpg"></div>
+	<img class="proj_thumb" id="depictqa_one" src="image/2024_depictqa_logo.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('depictqa') </script>
 </td>
@@ -836,8 +940,8 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 <tr id='bilarf_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=160px">
-	<div class="two" id='bilarf_image' style="height=160px"><video class="proj_thumb" muted autoplay loop><source src="image/2024_bilarf.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
-	<img class="proj_thumb" src="image/2024_bilarf.jpg">
+	<div class="two" id='bilarf_two' style="height=160px"><video class="proj_thumb" muted autoplay loop><source src="image/2024_bilarf.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+	<img class="proj_thumb" id="bilarf_one" src="image/2024_bilarf.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('bilarf') </script>
 </td>
@@ -854,10 +958,10 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 <tr id='lensless_face_tr'>
 <td class="proj_interactive">
   <div class="one" style="height=80px">
-	<div class="two" id='lensless_face_image' style="height=80px">
+	<div class="two" id='lensless_face_two' style="height=80px">
 		<video class="proj_thumb" muted autoplay loop><source src="image/2024_lensless_face.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 	</div>
-	<img class="proj_thumb" src="image/2024_lensless_face.jpg">
+	<img class="proj_thumb" id="lensless_face_one" src="image/2024_lensless_face.jpg">
   </div>
   <script type="text/javascript">addImageSwitcher('lensless_face') </script>
 </td>
