@@ -24,12 +24,15 @@ img.bottom {
 <!-- Add something here -->
 <!-- CSS -->
 
-<div class="menu"> <a href="#home">Home</a> 
-<a href="#publications">Publications</a> 
-<a href="#misc">Misc.</a> 
+<div class="menu"> <a href="#bio">Bio</a> 
+<a href="#members">Lab Members</a> 
+<a href="#publications_recent">Recent Pub.</a> 
+<a href="#education">Education</a>
+<a href="#publications_others">Other Pub.</a> 
+<a href="#misc">Misc.</a>
 </div>
 
-<a id="home" class="anchor"></a>
+<a id="bio" class="anchor"></a>
 <div id="container"><div class="container"> 
 <div id="toptitle">
 <h1>Tianfan Xue</h1>
@@ -183,6 +186,7 @@ isWebsiteReachable('https://www.youtube.com').then((reachable) => {
 
 </script>
 
+<a id="members" class="anchor"></a>
 <h2>Lab members</h2>
 
 <table class="imgtable"><tbody>
@@ -340,9 +344,6 @@ co. w. Qi Dou & Jinwei Gu <br />
 
 <!-- ######################################################################################################################## -->
 <!-- Project -->
-<a id="publications" class="anchor"></a>
-<h2>Selected Publications</h2>
-
 <script>
 function addImageSwitcher(projName) {
   const trEle = document.getElementById(projName + '_tr');
@@ -364,10 +365,12 @@ function addImageSwitcher(projName) {
 }
 </script>
 
+
+<a id="publications_recent" class="anchor"></a>
+<h2>Selected Publications (Recent 3 years)</h2>
+
 <table class="imgtable">
-
 <tbody>
-
 <tr>
 <td>
 <h3>2026</h3>
@@ -1019,11 +1022,96 @@ Advancing Image Quality Assessment through Multi-modal Language Models
 </p></td>
 </tr>
 
-<tr>
-<td>
-<h3>Before 2024</h3>
-</td>
-</tr>
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+<!-- Education -->
+<a id="education" class="anchor"></a>
+<h2>Education</h2>
+<ul>
+<li><p><b>Ph.D., Computer Sci., Massachusetts Institute of Technology</b>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aug. 2012 - Jul. 2017<br />
+Supervisor: Prof. William T. Freeman.<br /></p>
+</li>
+</ul>
+<ul>
+<li><p><b>M.Phil., Information Eng., Chinese University of Hong Kong</b>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aug. 2009 - Jul. 2011<br />
+Supervisor: Prof. Xiaoou Tang<br /></p>
+</li>
+</ul>
+<ul>
+<li><p><b>B. Eng., Computer Sci. & Tech, Tsinghua University, China</b>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aug. 2005 - Jul. 2009 <br /></p>
+</li>
+</ul>
+
+<!-- Other Projects 
+
+<p><h3>Human Tracking using Online-Offline detector </h3></p>
+<table class="imgtable"><tr><td>
+<img class="proj_thumb" src="./image/tracking_small.jpg" alt=""/>&nbsp;</td>
+<td align="left"><p><a name="tracking"></a>
+We designed a human tracking framework combining an online detector using color histogram, and an offline detector using HOG, in which occlusion cases are dealt with by a novel EM algorithm. The project won <i>Outstanding undergraduate thesis</i> of Computer Science and Engineering Department, Tsinghua Univ. [<a href="./human_tracking.ppt">PPT</a>].<br /></p>
+-->
+
+
+<!-- Services -->
+
+<a href="#publication"><h2>Services</h2></a>
+<ul>
+<li><p>Conference Organizers:</br>
+Computer Vision and Pattern Recognition 2020 web chair</br>
+Computer Vision and Pattern Recognition 2023, 2024 area chair</br>
+Winter Conference on Applications of Computer Vision 2023 area chair</br>
+<li><p>Conference Reviewers:</br>
+Computer Vision and Pattern Recognition (CVPR): 2016, 2017, 2018, 2020, 2021, 2022</br>
+European Conference on Computer Vision (ECCV): 2016, 2018, 2020, 2022, workshop on optical flow (2018)</br>
+Pacific Graphics 2018</br>
+International Conference on Computer Vision (ICCV) 2017, 2019, 2021</br>
+SIGGRAPH 2018, 2021, 2022</br>
+SIGGRAPH Asia 2017, 2021, 2022</br>
+Neural Information Processing Systems (NeurIPS) 2016, 2021, 2022</br>
+International Symposium on Circuits &amp; Systems (ISCAS) 2017</br>
+<li><p>Journal Reviewers:</br>
+IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</br>
+IEEE Transactions on Systems, Man, and Cybernetics </br>
+IEEE Transactions on Computational Imaging (TCI) </br>
+IEEE Transactions on Multimedia (TMM) </br>
+IEEE Transactions on Image Processing (TIP) </br>
+IEEE Transactions on Circuits and Systems for Video Technology (TCSVT) </br>
+Artificial Intelligence</br>
+Image and Vision Computing (IVC)</br>
+Cognitive Computation </br>
+Computers and Electrical Engineering </br>
+Machine Vision and Applications </br>
+IEEE Computer Graphics and Applications </br>
+Journal of the Optical Society of America </br>
+Pattern Recognition Letter</br>
+Optics and Lasers in Engineering</br>
+</li>
+</ul> 
+
+
+
+
+
+
+
+
+
+
+<table class="imgtable">
+<tbody>
+
+<a id="publications_others" class="anchor"></a>
+<h2>Selected Publications (others)</h2>
 
 <tr>
 <td><img class="proj_thumb" src="./image/2023_objnerf.gif" alt=""/>&nbsp;</td>
@@ -1267,79 +1355,6 @@ ACM Multimedia (<b>MM</b>) 2011. [<a href="https://people.csail.mit.edu/tfxue/pa
     <div align="right">* indicates equal contribution</div>
 </td></tr>
 </table>
-
-<!-- Education -->
-<h2>Education</h2>
-<ul>
-<li><p><b>Ph.D., Computer Sci., Massachusetts Institute of Technology</b>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aug. 2012 - Jul. 2017<br />
-Supervisor: Prof. William T. Freeman.<br /></p>
-</li>
-</ul>
-<ul>
-<li><p><b>M.Phil., Information Eng., Chinese University of Hong Kong</b>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aug. 2009 - Jul. 2011<br />
-Supervisor: Prof. Xiaoou Tang<br /></p>
-</li>
-</ul>
-<ul>
-<li><p><b>B. Eng., Computer Sci. & Tech, Tsinghua University, China</b>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aug. 2005 - Jul. 2009 <br /></p>
-</li>
-</ul>
-
-<!-- Other Projects 
-
-<h2>Other Projects</h2>
-
-<p><h3>Image Reranking by Example: A Semi-supervised Learning Formulation</h3></p>
-<table class="imgtable"><tr><td>
-<img class="proj_thumb" src="./retrieval/retrieval_800.jpg" alt=""/>&nbsp;</td>
-<td align="left"><p><a name="reranking"></a>
-We proposed a new semi-supervised learning methods for example image based reranking. We adopts a graph-based formulation to solve this problem. We further deduct a closed form solution and an iterative solution for this problem. Detailed description is in [<a href="./retrieval/project_report.pdf">PDF</a>].<br /></p>
-</td></tr></table>
-
-<p><h3>Human Tracking using Online-Offline detector </h3></p>
-<table class="imgtable"><tr><td>
-<img class="proj_thumb" src="./image/tracking_small.jpg" alt=""/>&nbsp;</td>
-<td align="left"><p><a name="tracking"></a>
-We designed a human tracking framework combining an online detector using color histogram, and an offline detector using HOG, in which occlusion cases are dealt with by a novel EM algorithm. The project won <i>Outstanding undergraduate thesis</i> of Computer Science and Engineering Department, Tsinghua Univ. [<a href="./human_tracking.ppt">PPT</a>].<br /></p>
-</td></tr></table>
--->
-
-
-<!-- Services -->
-
-<a href="#publication"><h2>Services</h2></a>
-<ul>
-<li><p>Conference Organizers:</br>
-Computer Vision and Pattern Recognition 2020 web chair</br>
-Computer Vision and Pattern Recognition 2023, 2024 area chair</br>
-Winter Conference on Applications of Computer Vision 2023 area chair</br>
-<li><p>Conference Reviewers:</br>
-Computer Vision and Pattern Recognition (CVPR): 2016, 2017, 2018, 2020, 2021, 2022</br>
-European Conference on Computer Vision (ECCV): 2016, 2018, 2020, 2022, workshop on optical flow (2018)</br>
-Pacific Graphics 2018</br>
-International Conference on Computer Vision (ICCV) 2017, 2019, 2021</br>
-SIGGRAPH 2018, 2021, 2022</br>
-SIGGRAPH Asia 2017, 2021, 2022</br>
-Neural Information Processing Systems (NeurIPS) 2016, 2021, 2022</br>
-International Symposium on Circuits &amp; Systems (ISCAS) 2017</br>
-<li><p>Journal Reviewers:</br>
-IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</br>
-IEEE Transactions on Systems, Man, and Cybernetics </br>
-IEEE Transactions on Computational Imaging (TCI) </br>
-IEEE Transactions on Multimedia (TMM) </br>
-IEEE Transactions on Image Processing (TIP) </br>
-IEEE Transactions on Circuits and Systems for Video Technology (TCSVT) </br>
-Artificial Intelligence</br>
-Image and Vision Computing (IVC)</br>
-Cognitive Computation </br>
-Computers and Electrical Engineering </br>
-Machine Vision and Applications </br>
-IEEE Computer Graphics and Applications </br>
-Journal of the Optical Society of America </br>
-Pattern Recognition Letter</br>
-Optics and Lasers in Engineering</br>
-</li>
-</ul> 
 
 
 
