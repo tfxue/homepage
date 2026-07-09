@@ -430,7 +430,13 @@ function addImageSwitcher(projName) {
 </tr>
 
 <tr id='color_pass_through_tr'>
-<td><img class="proj_thumb" src="./image/2026-color-pass-through.jpg" alt=""/>&nbsp;</td>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='color_pass_through_two' style="height=160px"><img class='proj_thumb' src='image/2026-color-pass-through-result.jpg'></div>
+    <img class="proj_thumb" id='color_pass_through_one' src="image/2026-color-pass-through-input.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('color_pass_through') </script>
+</td>
 <td><p class="pub_title"> Color Pass-Through via Camera-Display Coupling </p>
   <p class="pub_author"> Ruikang Li, Molin Li, Jiarui Wu, Zhe Wei, Pengpeng Liu, <b>Tianfan Xue</b>&#8224<br>
   European Conference on Computer Vision (<b>ECCV</b>), 2026 <br>
