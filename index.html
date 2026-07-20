@@ -250,7 +250,7 @@ Ph.D. candidate <br />
 
 <td><div class="span3">
 <img src="./image/luo_yawen.jpg" width="150" height="150" alt="" /> <br />
-<a href="https://" target="_blank"> Yawen Luo 罗亚文 </a><br />
+<a href="https://luo0207.github.io/yawenluo/" target="_blank"> Yawen Luo 罗亚文 </a><br />
 Ph.D. candidate <br />
 </div></td>
 
@@ -405,7 +405,15 @@ function addImageSwitcher(projName) {
 </tr>
 
 <tr id='shotstream_tr'>
-<td><img class="proj_thumb" src="./image/2026-shotstream.jpg" alt=""/>&nbsp;</td>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='shotstream_two' style="height=160px">
+	  <video width=125% muted autoplay loop><source class='proj_thumb' src='image/2026-shotstream-result.mp4' type='video/mp4' ></video>
+	  </div>
+    <img class="proj_thumb" id='shotstream_one' src="image/2026-shotstream-input.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('shotstream') </script>
+</td>
 <td><p class="pub_title"> ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling </p>
   <p class="pub_author"> Yawen Luo, Xiaoyu Shi, Junhao Zhuang, Yutian Chen, Quande Liu, Xintao Wang, Pengfei Wan, <b>Tianfan Xue</b><br>
   European Conference on Computer Vision (<b>ECCV</b>), 2026 <br>
