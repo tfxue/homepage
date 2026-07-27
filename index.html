@@ -112,16 +112,16 @@ Tianfan Xue was working in Google Research from 2017 to 2022. Before that, Tianf
 </ul>
 <table class="imgtable"><tbody>
 <tr>
+<td><video id="videomp4_shotstream" width="440" height="248" controls preload="metadata" poster="./image/2026-demo-shotstream-poster.jpg"><source src="./image/2026-demo-shotstream.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
+<td><video id="videomp4_color_pass_through" width="440" height="248" controls preload="metadata" poster="./image/2026-demo-color-pass-through-poster.jpg"><source src="./image/2026-demo-color-pass-through.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
+</tr>
+<tr>
 <td><iframe id="videoyt1" width="440" height="248" src="https://www.youtube.com/embed/YG7FTLDIqic" frameborder="0" allowfullscreen></iframe></td>
 <td><iframe id="videoyt2" width="440" height="248" src="https://www.youtube.com/embed/bk11g3hZX5s" frameborder="0" allowfullscreen></iframe></td>
 </tr>
 <tr>
 <td><iframe id="videoyt3" width="440" height="248" src="https://www.youtube.com/embed/hOk8TJiotag" frameborder="0" allowfullscreen></iframe></td>
 <td><iframe id="videoyt4" width="440" height="248" src="https://www.youtube.com/embed/-VMV3MD1GIE" frameborder="0" allowfullscreen></iframe></td>
-</tr>
-<tr>
-<td><iframe id="videoyt5" width="440" height="248" src="https://www.youtube.com/embed/WmI7bv9nqjI" frameborder="0" allowfullscreen></iframe></td>
-<td><iframe id="videoyt6" width="440" height="248" src="https://www.youtube.com/embed/3AHDbJlGKwY" frameborder="0" allowfullscreen></iframe></td>
 </tr>
 </table>
 <!-- <video width="480" height="260" controls><source src="http://visualdynamics.csail.mit.edu/visualDynamics.mov" type="video/mp4">Your browser does not support the video tag. Please download it from <a href="http://visualdynamics.csail.mit.edu/visualDynamics.mov">this</a>.</video> -->
@@ -151,6 +151,17 @@ function replaceVideoWithImage(videoId, imageUrl) {
   }
 }
 
+function replaceVideoOnError(videoId, imageUrl) {
+  const videoElement = document.getElementById(videoId);
+  if (videoElement) {
+    const fallback = () => replaceVideoWithImage(videoId, imageUrl);
+    videoElement.addEventListener('error', fallback, { once: true });
+    videoElement.querySelectorAll('source').forEach((sourceElement) => {
+      sourceElement.addEventListener('error', fallback, { once: true });
+    });
+  }
+}
+
 async function isWebsiteReachable(url) {
   try {
     // Send a request to the URL
@@ -173,17 +184,18 @@ async function isWebsiteReachable(url) {
 }
 
 isWebsiteReachable('https://www.youtube.com').then((reachable) => {
-  if (!reachable) {
+  if (!reachable || window.location.protocol === 'file:') {
 	console.log('Repalce')
 	replaceVideoWithImage('videoyt1', './image/yt_YG7FTLDIqic_poster.jpg')
 	replaceVideoWithImage('videoyt2', './image/yt_bk11g3hZX5s_poster.jpg')
-	replaceVideoWithImage('videoyt3', './image/yt_VMV3MD1GIE_poster.jpg')
-    replaceVideoWithImage('videoyt4', './image/yt_yKmkXJSlAl8_poster.jpg')
-	replaceVideoWithImage('videoyt5', './image/yt_WmI7bv9nqjI_poster.jpg')
-	replaceVideoWithImage('videoyt6', './image/yt_ZYSOonigv3s_poster.jpg')
+	replaceVideoWithImage('videoyt3', './image/yt_hOk8TJiotag_poster.jpg')
+    replaceVideoWithImage('videoyt4', './image/yt_VMV3MD1GIE_poster.jpg')
   } else {
   }
 });
+
+replaceVideoOnError('videomp4_shotstream', './image/2026-demo-shotstream-poster.jpg')
+replaceVideoOnError('videomp4_color_pass_through', './image/2026-demo-color-pass-through-poster.jpg')
 
 </script>
 
@@ -426,7 +438,7 @@ function addImageSwitcher(projName) {
 <td><p class="pub_title"> Parallax Portrait Matting </p>
   <p class="pub_author"> Xin Cai, Jiawen Chen, Lars Jebe, <b>Tianfan Xue</b>, Zhoutong Zhang&#8224<br>
   European Conference on Computer Vision (<b>ECCV</b>), 2026 <br>
-[<a href="./papers/ECCV26_Parallax_Portrait_Matting.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/2607.11205">PDF</a>] [<a href="https://caixin98.github.io/parallax/">Website</a>]
 </p></td>
 </tr>
 
