@@ -106,7 +106,7 @@ Tianfan Xue was working in Google Research from 2017 to 2022. Before that, Tianf
 -->
 <ul>
   <li>PhotoAgent, an exploratory visual aesthetic planning agent, has been selected for an <b>oral</b> presentation at ICML 2026.</li>
-  <li>Two papers from our group have been accepted to the <b>SIGGRAPH Asia 2026 journal track</b>.</li>
+  <li>Three papers from our group have been accepted to the <b>SIGGRAPH Asia 2026 journal track</b>.</li>
   <li>UltraFusion, an ultra high dynamic range HDR, has won the <b>CVPR 2025 best demo honorable mention</b> and was selected for a <b>spotlight</b> presentation.</li>
   <li>BilarfNeRF, an NeRF reconstruction with bilateral grid, has won the <b>SIGGRAPH 2024 best paper honorable mention</b>.</li>
   <li>PhocoLens, an photo-consistent diffusion, has won a <b>spotlight</b> presentation in NeurIPS 2024.</li>
@@ -365,19 +365,32 @@ function addImageSwitcher(projName) {
   const trEle = document.getElementById(projName + '_tr');
   const twoEle = document.getElementById(projName + '_two')
   const oneEle = document.getElementById(projName + '_one')
+  const videos = Array.from(twoEle.querySelectorAll('video'));
+  function playVideos() {
+    videos.forEach((video) => {
+      const playPromise = video.play();
+      if (playPromise) playPromise.catch(() => {});
+    });
+  }
+  function pauseVideos() {
+    videos.forEach((video) => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
   trEle.onmouseout = function () {
     twoEle.style.opacity = '0';
     oneEle.style.opacity = '1';
+    pauseVideos();
   };
   trEle.onmouseover = function () {
     twoEle.style.opacity = '1';
     oneEle.style.opacity = '0';
+    playVideos();
   };
   oneEle.style.opacity = '1';
   twoEle.style.opacity = '0';
-  console.log(projName + '_image')
-  console.log(trEle)
-  console.log(imgEle)
+  pauseVideos();
 }
 </script>
 
@@ -397,7 +410,7 @@ function addImageSwitcher(projName) {
 <td class="proj_interactive">
   <div class="one" style="height=160px">
     <div class="two" id='internw0_delta_two' style="height=160px">
-      <video width=100% muted autoplay loop playsinline><source class='proj_thumb' src='image/2026-internw0-delta-demo.mp4' type='video/mp4' ></video>
+      <video class='proj_thumb' muted autoplay loop playsinline><source src='image/2026-internw0-delta-demo.mp4' type='video/mp4' ></video>
     </div>
     <img class="proj_thumb" id='internw0_delta_one' src="image/2026-internw0-delta-demo.jpg">
   </div>
@@ -407,6 +420,72 @@ function addImageSwitcher(projName) {
   <p class="pub_author"> Xingyu Miao, Zizun Li, Baole Fang, Kaiwen Song, Tenghui Wang, Hanxue Zhang, ..., Junting Dong, Haoyu Guo, Tao Lu, Mulin Yu, Bowen Zhou, Bin Zhao, <b>Tianfan Xue</b>, Weinan Zhang, Chunhua Shen<br>
   arXiv 2609.31394, 2026 <br>
 [<a href="https://arxiv.org/pdf/2609.31394">PDF</a>] [<a href="https://internrobotics.github.io/InternW0-Delta/">Website</a>] [<a href="https://github.com/InternRobotics/InternW0-Delta">Code</a>]
+</p></td>
+</tr>
+
+<tr id='anyrecon_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='anyrecon_two' style="height=160px">
+      <video class='proj_thumb' muted loop playsinline preload="metadata"><source src='image/2026-anyrecon.mp4' type='video/mp4' ></video>
+    </div>
+    <img class="proj_thumb" id='anyrecon_one' src="image/2026-anyrecon.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('anyrecon') </script>
+</td>
+<td><p class="pub_title"> AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model </p>
+  <p class="pub_author"> Yutian Chen, Shi Guo, Renbiao Jin, Tianshuo Yang, Xin Cai, Yawen Luo, Mingxin Yang, Mulin Yu, Linning Xu, <b>Tianfan Xue</b><br>
+  ACM Transactions on Graphics (<b>TOG</b>), SIGGRAPH Asia 2026 Journal Track, 2026 <br>
+[<a href="https://arxiv.org/pdf/2604.19747">PDF</a>] [<a href="https://github.com/OpenImagingLab/AnyRecon">Code</a>]
+</p></td>
+</tr>
+
+<tr id='swiftfusion_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='swiftfusion_two' style="height=160px"><img class='proj_thumb' src='image/2026-swiftfusion-ours.jpg'></div>
+    <img class="proj_thumb" id='swiftfusion_one' src="image/2026-swiftfusion-over.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('swiftfusion') </script>
+</td>
+<td><p class="pub_title"> SwiftFusion: Towards Motion-Robust and Efficient 4K HDR Fusion </p>
+  <p class="pub_author"> Yichen Bian, Zixuan Chen, Yujin Wang, Xin Cai, Shi Guo, Junhao Zhuang, Leilei Gu, <b>Tianfan Xue</b><br>
+  ACM Transactions on Graphics (<b>TOG</b>), SIGGRAPH Asia 2026 Journal Track, 2026 <br>
+[<a href="https://doi.org/10.1145/3842557">Paper</a>] [<a href="https://openimaginglab.github.io/SwiftFusion/">Website</a>] [<a href="https://github.com/OpenImagingLab/SwiftFusion">Code</a>]
+</p></td>
+</tr>
+
+<tr id='duomatching_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='duomatching_two' style="height=160px">
+      <video class='proj_thumb' muted loop playsinline preload="metadata"><source src='image/2026-duomatching.mp4' type='video/mp4' ></video>
+    </div>
+    <img class="proj_thumb" id='duomatching_one' src="image/2026-duomatching.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('duomatching') </script>
+</td>
+<td><p class="pub_title"> DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation </p>
+  <p class="pub_author"> Jiahao Zhan, Yan Wang, Yongrui Ma, Qunliang Xing, Ruchang Yao, Runtao Liu, Shijie Zhao, <b>Tianfan Xue</b><br>
+  arXiv 2610.03543, 2026 <br>
+[<a href="https://arxiv.org/pdf/2610.03543">PDF</a>] [<a href="https://johnzhan2023.github.io/DuoMatching/">Website</a>]
+</p></td>
+</tr>
+
+<tr id='rmd_tr'>
+<td class="proj_interactive">
+  <div class="one">
+    <div class="two" id='rmd_two'>
+      <video class='proj_thumb' muted loop playsinline preload="metadata" poster="image/2026-rmd-comparison.jpg"><source src='image/2026-rmd-comparison.mp4' type='video/mp4' ></video>
+    </div>
+    <img class="proj_thumb" id='rmd_one' src="image/2026-rmd-comparison.jpg" alt="Causal Forcing and Ours at the start of the rollout">
+  </div>
+  <script type="text/javascript">addImageSwitcher('rmd') </script>
+</td>
+<td><p class="pub_title"> Rollout-Marginal Distillation for Long-Horizon Autoregressive Video Generation </p>
+  <p class="pub_author"> Chenjian Gao, Zhihao Hu, Jianqi Ma, Jun Zhang, Weidong Zhang, <b>Tianfan Xue</b><br>
+  arXiv 2609.37925, 2026 <br>
+[<a href="https://arxiv.org/pdf/2609.37925">PDF</a>] [<a href="https://cjeen.github.io/RMD/">Website</a>]
 </p></td>
 </tr>
 
@@ -428,6 +507,41 @@ function addImageSwitcher(projName) {
 </p></td>
 </tr>
 
+<tr id='vdotpp_tr'>
+<td><img class="proj_thumb" src="./image/2026-vdotpp.jpg" alt=""/>&nbsp;</td>
+<td><p class="pub_title"> VDOT++: Unified Few-Step Video Generation via Unbalanced Optimal Transport Distillation </p>
+  <p class="pub_author"> Yutong Wang, Xingtong Ge, Enhuai Liu, Yunke Wang, <b>Tianfan Xue</b>, Yu Qiao, Yaohui Wang, Xinyuan Chen, Chang Xu<br>
+  arXiv 2610.03221, 2026 <br>
+[<a href="https://arxiv.org/pdf/2610.03221">PDF</a>]
+</p></td>
+</tr>
+
+<tr id='robosynchallenge_tr'>
+<td><img class="proj_thumb" src="./image/2026-robosynchallenge.jpg" alt=""/>&nbsp;</td>
+<td><p class="pub_title"> RoboSynChallenge: Mastering Real-World Dexterity via Generalizing Synthesized Manipulation Skills </p>
+  <p class="pub_author"> Runyi Zhao, Ruixin Wu, Chengkun Li, Hongrui Zhang, Ang Li, Ruixing Jin, Yueci Deng, Yingying Guo, Lihe Ding, Shaocong Dong, <b>Tianfan Xue</b>, Yanjun Gao, Yudong Luo, Pascal Poupart, Simo Wu, Kui Jia, Wei-shi Zheng, Guiliang Liu<br>
+  Neural Information Processing Systems (<b>NeurIPS</b>) Competition Track, 2026 <br>
+[<a href="https://arxiv.org/pdf/2608.12416">PDF</a>]
+</p></td>
+</tr>
+
+<tr id='realvdeblur_tr'>
+<td class="proj_interactive">
+  <div class="one" style="height=160px">
+    <div class="two" id='realvdeblur_two' style="height=160px">
+      <video class='proj_thumb' muted loop playsinline preload="metadata"><source src='image/2026-realvdeblur-slider.mp4' type='video/mp4' ></video>
+    </div>
+    <img class="proj_thumb" id='realvdeblur_one' src="image/2026-realvdeblur.jpg">
+  </div>
+  <script type="text/javascript">addImageSwitcher('realvdeblur') </script>
+</td>
+<td><p class="pub_title"> RealVDeblur: One-Step Diffusion for Generalizable Real-World Video Deblurring </p>
+  <p class="pub_author"> Renbiao Jin, Mingxin Yang, Yutian Chen, Junhao Zhuang, Xin Cai, Mulin Yu, Linning Xu, Wenxian Yu, Danping Zou, Shi Guo, <b>Tianfan Xue</b><br>
+  arXiv 2607.20628, 2026 <br>
+[<a href="https://arxiv.org/pdf/2607.20628">PDF</a>] [<a href="https://rbjin.github.io/RealVDeblur/">Website</a>]
+</p></td>
+</tr>
+
 <tr id='lumepalette_tr'>
 <td><img class="proj_thumb" src="./image/2026-lumepalette.jpg" alt=""/>&nbsp;</td>
 <td><p class="pub_title"> Lume-Palette: Decoupled Illumination Priors for Spatially Controllable Multi-View Indoor Scene Relighting </p>
@@ -441,7 +555,7 @@ function addImageSwitcher(projName) {
 <td class="proj_interactive">
   <div class="one" style="height=160px">
     <div class="two" id='shotstream_two' style="height=160px">
-	  <video width=125% muted autoplay loop><source class='proj_thumb' src='image/2026-shotstream-result-fast.mp4' type='video/mp4' ></video>
+	  <video class='proj_thumb' muted autoplay loop><source src='image/2026-shotstream-result-fast.mp4' type='video/mp4' ></video>
 	  </div>
     <img class="proj_thumb" id='shotstream_one' src="image/2026-shotstream-input.jpg">
   </div>
@@ -517,7 +631,7 @@ function addImageSwitcher(projName) {
 <td class="proj_interactive">
   <div class="one" style="height=160px">
     <div class="two" id='flashvsr_two' style='height=160px'>
-	  <video width=125% muted autoplay loop><source class='proj_thumb' src='image/2025_flashvsr.mp4' type='video/mp4' ></video>
+	  <video class='proj_thumb' style="height:144px; object-fit:cover;" muted autoplay loop><source src='image/2025_flashvsr.mp4' type='video/mp4' ></video>
 	  </div>
     <img class="proj_thumb" id='flashvsr_one' src="image/2025_flashvsr.jpg">
   </div>
@@ -676,15 +790,6 @@ Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br>
 </p></td>
 </tr>
 
-<tr id='anyrecon_tr'>
-<td><img class="proj_thumb" src="./image/2026-anyrecon.jpg" alt=""/>&nbsp;</td>
-<td><p class="pub_title"> AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model </p>
-  <p class="pub_author"> Yutian Chen, Shi Guo, Renbiao Jin, Tianshuo Yang, Xin Cai, Yawen Luo, Mingxin Yang, Mulin Yu, Linning Xu, <b>Tianfan Xue</b><br>
-  arXiv 2604.19747, 2026 <br>
-[<a href="https://arxiv.org/pdf/2604.19747">PDF</a>] [<a href="https://github.com/OpenImagingLab/AnyRecon">Code</a>]
-</p></td>
-</tr>
-
 <tr id='deraining_generalization_tr'>
 <td><img class="proj_thumb" src="./image/2026-deraining-generalization.jpg" alt=""/>&nbsp;</td>
 <td><p class="pub_title"> Revisiting the Generalization Problem of Low-level Vision Models Through the Lens of Image Deraining </p>
@@ -805,6 +910,15 @@ Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026 <br>
 <td>
 <h3>2025</h3>
 </td>
+</tr>
+
+<tr id='egvd_tr'>
+<td><img class="proj_thumb" src="./image/2025-egvd.jpg" alt=""/>&nbsp;</td>
+<td><p class="pub_title"> EGVD: Event-Guided Video Diffusion Model for Physically Realistic Large-Motion Frame Interpolation </p>
+  <p class="pub_author"> Ziran Zhang, Xiaohui Li, Yihao Liu, Yujin Wang, Yueting Chen, <b>Tianfan Xue</b>, Shi Guo<br>
+  International Conference on Computer Vision Workshops (<b>ICCVW</b>), MIPI Workshop, 2025 <br>
+[<a href="https://arxiv.org/pdf/2503.20268">PDF</a>] [<a href="https://github.com/OpenImagingLab/EGVD">Code</a>]
+</p></td>
 </tr>
 
 <tr id='lumina_dimoo_tr'>
